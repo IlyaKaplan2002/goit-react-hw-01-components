@@ -12,8 +12,8 @@ const StatisticsItem = ({ name, percent }) => {
 };
 
 StatisticsItem.propTypes = {
-  name: PropTypes.string,
-  percent: PropTypes.number,
+  name: PropTypes.string.isRequired,
+  percent: PropTypes.number.isRequired,
 };
 
 export default StatisticsItem;

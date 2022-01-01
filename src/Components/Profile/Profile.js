@@ -3,6 +3,7 @@ import React from 'react';
 import { ProfileStyled } from './ProfileStyled';
 
 const Profile = ({ name, tag, location, avatar, stats }) => {
+  const { followers, views, likes } = stats;
   return (
     <ProfileStyled>
       <div className="description">
@@ -15,15 +16,15 @@ const Profile = ({ name, tag, location, avatar, stats }) => {
       <ul className="stats">
         <li>
           <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
+          <span className="quantity">{followers}</span>
         </li>
         <li>
           <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
+          <span className="quantity">{views}</span>
         </li>
         <li>
           <span className="label">Likes</span>
-          <span className="quantity">{stats.likes}</span>
+          <span className="quantity">{likes}</span>
         </li>
       </ul>
     </ProfileStyled>
@@ -31,14 +32,14 @@ const Profile = ({ name, tag, location, avatar, stats }) => {
 };
 
 Profile.propTypes = {
-  name: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
   stats: PropTypes.shape({
-    followers: PropTypes.number,
-    views: PropTypes.number,
-    likes: PropTypes.number,
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
   }),
 };
 
